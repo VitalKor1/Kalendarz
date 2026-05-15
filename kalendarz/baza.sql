@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS terminarz CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE terminarz;
+
+CREATE TABLE IF NOT EXISTS zdarzenia (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    typ ENUM('zadanie', 'spotkanie') NOT NULL,
+    tytul VARCHAR(255) NOT NULL,
+    data_czas DATETIME NOT NULL,
+    opis TEXT DEFAULT NULL,
+    utworzono TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
